@@ -4,7 +4,7 @@ import React from 'react';
 const AppButton = ({title}) => {
     return (
         
-        <TouchableOpacity style={{ height: 25, backgroundColor: "#DB4700", alignItems: 'center', justifyContent: 'center' ,borderRadius:15,}}>
+        <TouchableOpacity style={{ height: 50, backgroundColor: "#DB4700", alignItems: 'center', width:300, justifyContent: 'center' ,borderRadius:15,}}>
         <Text style={{ fontSize: 14, color: "white",  padding:15 }}>{title}</Text>
     </TouchableOpacity>
                 

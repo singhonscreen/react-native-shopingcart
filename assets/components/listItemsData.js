@@ -1,4 +1,4 @@
-import { bracelet,watch, yogamat } from "./constants";
+
 export  const data = [
     {
         itemImage:{uri:"https://i.ibb.co/80jRf0B/Timepiece-1.png"},

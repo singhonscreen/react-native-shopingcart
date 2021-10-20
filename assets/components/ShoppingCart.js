@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, TextInput, View,Image } from 'react-native';
+import { StyleSheet, TextInput, View,Image, ScrollView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { EvilIcons } from '@expo/vector-icons';
 import { logo } from './constants';
@@ -8,7 +8,7 @@ import ListItems from './ListItems';
 
 const ShoppingCart = () => {
     return (
-        <View style={styles.main_conatiner}>
+        <ScrollView style={styles.main_conatiner}>
             <View style={styles.togglecontainer}>
             <FontAwesome name="bars" size={24} color="black" />
             <Image
@@ -24,7 +24,7 @@ const ShoppingCart = () => {
         <EvilIcons name="camera" size={27} style={{padding:10}} color="black" style={styles.camera} />
             </View>
             <ListItems />
-        </View>
+        </ScrollView>
     )
 }
 
@@ -32,7 +32,10 @@ export default ShoppingCart
 
 const styles = StyleSheet.create({
     main_conatiner:{
-        padding:10
+        flex:1,
+        paddingHorizontal:10,
+        marginVertical:30,
+        paddingVertical:2
     },
     togglecontainer:{
         flexDirection:"row",

@@ -126,10 +126,13 @@ const styles = StyleSheet.create({
         color: "orange",
     },
     subContain:{
+        justifyContent:"center",
+        alignItems:"center",
         textAlign:"center",
         marginTop:7,
     },
     subTotal:{
-        fontWeight:"bold"
+        fontWeight:"bold",
+        fontSize:20
     },
 })
