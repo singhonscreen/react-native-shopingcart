@@ -54,10 +54,10 @@ const styles = StyleSheet.create({
           marginTop:5,
           backgroundColor: '#E5E5E5',
           alignItems:"center"
-         
-
       },
-     
+     searchinput:{
+         width:250
+     },
       camera:{
           borderLeftColor:"grey",
           borderLeftWidth:1

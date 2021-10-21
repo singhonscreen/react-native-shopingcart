@@ -1,27 +1,27 @@
 import React, { Component } from 'react'
 
 import { ImageBackground,TextInput, StyleSheet, View,Image,Text, SafeAreaView, TouchableOpacity, Button} from "react-native";
-import AppButton from './AppButton'
 import { AntDesign } from '@expo/vector-icons';
 import { EvilIcons } from '@expo/vector-icons';
-import ShoppingCart from "./ShoppingCart"
 import { image } from "./constants";
 import { logo } from "./constants";
 import Constants from 'expo-constants';
 
 const Login = ({navigation}) => {
-    const [mailChange, setMailChange ] = React.useState("Email");
-    const [passChange, setPassChange] = React.useState("Password");
-const handleChange = (e)=>{
-    setPassChange(
-        e.target.value
-    )
-}
+    const [mailChange, setMailChange ] = React.useState("");
+    const [passChange, setPassChange] = React.useState("");
+
 
     const goToShop = ()=>{
-  
+      if(mailChange==="" || passChange===""){
+          alert('please fill the values')
+      }else if(mailChange.length < 3 || passChange.length < 5){
+          alert('Credentials are wrong')
+      }else{
 
-      navigation.navigate('ShoppingCart')
+          navigation.navigate('ShoppingCart')
+      }
+
   }
     
     return (
@@ -38,20 +38,20 @@ const handleChange = (e)=>{
             <View style={styles.input_container}>
             <View style={{height:150, marginBottom:20}}>
             <View style={styles.input_contain} >
-            <AntDesign name="mail" size={15} color="black" style={{paddingBottom:5}} />
+            <AntDesign name="mail" size={15} color="black" style={{paddingBottom:12}} />
             <TextInput
             style={styles.input}
-            onChangeText={(e)=>{setMailChange(e.target.value)}}
-                        value="mail"
-                        
+            onChangeText={(mailChange)=>{setMailChange(mailChange)}}
+            defaultValue={mailChange}
+            placeholder="Email"    
                         />
                         </View>
                         <View style={styles.input_contain} >
-                        <EvilIcons name="lock" size={24} color="black" style={{paddingBottom:2}} />
+                        <EvilIcons name="lock" size={24} color="black" style={{paddingBottom:12}} />
                         <TextInput
                         style={styles.input}
-                        onChangeText={(text)=>handleChange(text)}
-                        value={passChange}
+                        onChangeText={(passChange)=>{setPassChange(passChange)}}
+            defaultValue={passChange}
                         placeholder="Password"
                         />
                         </View>
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     input_contain:
         {
             flex:1, flexDirection:"row",
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
         borderBottomWidth: 1, 
         alignItems:"flex-end" ,
         
@@ -109,12 +109,13 @@ const styles = StyleSheet.create({
     ,
    
     input: {
-        height: 10,
-        margin: 5,
-        paddingTop: 10,
-        paddingRight: 10,
-        paddingBottom: 10,
-        paddingLeft: 0,
+        height: 50,
+        width:150,
+        marginBottom: -5,
+        paddingTop: 0,
+        paddingRight: 0,
+        paddingBottom: -5,
+        paddingLeft: 5,
         borderColor: "#3C3C3C",
         borderBottomColor: "#3C3C3C",
         borderWidth:0,
